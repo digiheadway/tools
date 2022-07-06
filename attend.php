@@ -45,9 +45,6 @@ time_spent
 
 
 -->
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
 
 <script>
 var x = document.getElementById("demo");
