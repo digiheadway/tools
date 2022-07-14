@@ -19,7 +19,6 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT date, time_spent FROM attend Where name = '" .$user ."'";
-echo $sql;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
