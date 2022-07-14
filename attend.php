@@ -19,10 +19,12 @@ $sql = "SELECT id, name, date FROM attend";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . $row["date"] . "<br>";
-    }
+  echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["name"]. "</td></tr>";
+  }
+  echo "</table>";
 } else {
     echo "0 results";
 }
@@ -30,8 +32,9 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<!--
 
+
+<!--
 id	
 name	
 date	
@@ -42,7 +45,6 @@ checkout_time
 checkout_ip	
 checkout_loc	
 time_spent
-
 
 -->
 
