@@ -1,15 +1,3 @@
-<?php 
-$user = $_GET['user'];
-setcookie("user", $user, time() + (86400 * 365), "/"); // 86400 = 1 day
-$user = $_COOKIES['user'];
-
-if($user){
-    header('Location: target-page.php');
-    exit();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +7,7 @@ if($user){
     <title>Login to System</title>
 </head>
 <body>
-<form action="login.php" method="get">
+<form action="setcookies.php" method="get">
 Name: <input type="text" name="user"><br>
 <input type="submit">
 </form>
