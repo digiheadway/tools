@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" .$user ."' GROUP BY date";
 $result = $conn->query($sql);
-$result = $result->fetch_assoc()
+$result = $result->fetch_assoc();
 var_dump($result);
 
 if ($result->num_rows > 0) {
