@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="setcookies.php" method="get">
-Name: <input type="text" name="user"><br>
+Name: <input type="text" name="user" pattern="[a-z]"><br>
 <input type="submit">
 </form>
 </body>
