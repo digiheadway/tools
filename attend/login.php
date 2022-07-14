@@ -19,9 +19,9 @@ die();
     <title>Login to System</title>
 </head>
 <body>
-    <form action="" method="post">
-        <input type="text">
-        <input type="button" value="Login">
-    </form>
+<form action="welcome.php" method="post">
+Name: <input type="text" name="user"><br>
+<input type="submit">
+</form>
 </body>
 </html>
