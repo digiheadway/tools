@@ -58,6 +58,7 @@ time_spent
 -->
 
 <script>
+window.onload = checkCookie();
 
 function checkCookie() {
     let user = getCookie("user");
@@ -79,8 +80,6 @@ function setCookie(cname,cvalue,exdays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
-
 
 
 var x = document.getElementById("demo");
