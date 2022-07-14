@@ -72,14 +72,14 @@
   <div>
     <p>eg. vinaysharma</p>
    <!-- <label for="username">Username</label> -->
-    <input name="username" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
+    <input name="user" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
     <input type="submit">
   </div>
 </form>
 <script>
     (function() {
   
-  var input              = document.getElementById('username');
+  var input              = document.getElementById('user');
   var form               = document.getElementById('form');
   var elem               = document.createElement('div');
       elem.id            = 'notify';
