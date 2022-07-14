@@ -7,9 +7,14 @@
     <title>Login to System</title>
 </head>
 <body>
-<form action="setcookies.php" method="get">
-Name: <input type="text" name="user" pattern="[a-z]"><br>
-<input type="submit">
+<form id="form" action="setcookies.php" method="get">
+  <div>
+    <label for="username">Username</label>
+    <input name="username" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
+    <input type="submit">
+  </div>
 </form>
+
 </body>
 </html>
+
