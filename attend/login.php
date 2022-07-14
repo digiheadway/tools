@@ -69,7 +69,8 @@
 <body>
 <form id="form" action="setcookies.php" method="get">
   <div>
-    <label for="username">Username (eg. vinaysharma)</label>
+    <p>eg. vinaysharma</p>
+    <label for="username">Username</label>
     <input name="username" type="text" placeholder="Username" pattern="[a-z]{1,15}" id="username">
     <input type="submit">
   </div>
