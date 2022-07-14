@@ -1,8 +1,11 @@
 <?php 
 $user = $_GET['user'];
-setcookie('user', $user, time() + (86400 * 365), "/"); // 86400 = 1 day
+echo $user;
+setcookie("user", $user, time() + (86400 * 365), "/"); // 86400 = 1 day
 
 $user = $_COOKIES['user'];
+echo $user;
+
 if($user){
     header("Location: index.php");
 die();
