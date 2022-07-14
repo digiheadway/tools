@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
   echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
   // output data of each row
   while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["time_spent"]. "</td></tr>";
+      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["sum(time_spent)"]. "</td></tr>";
   }
   echo "</table>";
 } else {
