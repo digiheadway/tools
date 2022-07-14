@@ -1,6 +1,6 @@
 <?php
 
-$user = $_COOKIES['user'];
+$user = $_COOKIE['user'];
 
 if (!$user) {
     echo "hello not user";
