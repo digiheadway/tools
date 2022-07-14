@@ -18,7 +18,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT date, time_spent FROM attend Where name = '" .$user ."'";
+$sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" .$user ."' GROUP BY date";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
