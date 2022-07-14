@@ -27,7 +27,8 @@ checkout_ip
 checkout_loc	
 time_spent
 
--->
+-->$user = $_POST['user'];
+setcookie('user', $user, time() + (86400 * 365), "/"); // 86400 = 1 day
 
 <script src="script.js"></script>
 </body>

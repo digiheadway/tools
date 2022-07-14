@@ -1,5 +1,5 @@
 <?php 
-$user = $_POST['user'];
+$user = $_GET['user'];
 setcookie('user', $user, time() + (86400 * 365), "/"); // 86400 = 1 day
 
 $user = $_COOKIES['user'];
@@ -19,7 +19,7 @@ die();
     <title>Login to System</title>
 </head>
 <body>
-<form action="index.php" method="post">
+<form action="index.php" method="get">
 Name: <input type="text" name="user"><br>
 <input type="submit">
 </form>

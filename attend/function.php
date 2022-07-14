@@ -1,4 +1,5 @@
 <?php
+
 $user = $_COOKIES['user'];
 
 if (!$user) {
