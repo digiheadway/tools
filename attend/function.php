@@ -1,10 +1,8 @@
 <?php
 
 $user = $_COOKIE['user'];
-
 if (!$user) {
-    echo "hello not user";
-   // header("Location: login.php");
+    header("Location: login.php");
     die();
 }
 
@@ -20,7 +18,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, date FROM attend";
+$sql = "SELECT id, name, date FROM attend Where name = $user";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
