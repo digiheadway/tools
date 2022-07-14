@@ -22,7 +22,7 @@ die();
     <title>Login to System</title>
 </head>
 <body>
-<form action="index.php" method="get">
+<form action="login.php" method="get">
 Name: <input type="text" name="user"><br>
 <input type="submit">
 </form>
