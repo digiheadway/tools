@@ -19,7 +19,7 @@ die();
     <title>Login to System</title>
 </head>
 <body>
-<form action="welcome.php" method="post">
+<form action="index.php" method="post">
 Name: <input type="text" name="user"><br>
 <input type="submit">
 </form>
