@@ -1,5 +1,11 @@
-
 <?php
+$user = $_COOKIES['user'];
+
+if (!$user) {
+    header("Location: login.php");
+    die();
+}
+
 $servername = "localhost";
 $username = "u240376517_tools";
 $password = "#DNhomg$:p7L";
