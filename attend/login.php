@@ -44,6 +44,7 @@
       padding: 10px;
       outline: 0;
       border: 2px solid #B0BEC5;
+      margin-top: 10px;
   }
   input.invalid {
       border-color: #DD2C00;
