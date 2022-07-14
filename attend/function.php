@@ -20,14 +20,12 @@ if ($conn->connect_error) {
 
 $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" .$user ."' GROUP BY date";
 $result = $conn->query($sql);
-$result = $result->fetch_assoc();
-var_dump($result);
 
 if ($result->num_rows > 0) {
   echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
   // output data of each row
   while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["sum(time_spent)"]. "</td></tr>";
+      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["total_hours"]. "</td></tr>";
   }
   echo "</table>";
 } else {
