@@ -1,11 +1,10 @@
 <?php
 
-
-
 $user = $_COOKIES['user'];
 
 if (!$user) {
-    header("Location: login.php");
+    echo "hello not user";
+   // header("Location: login.php");
     die();
 }
 
