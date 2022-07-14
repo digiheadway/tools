@@ -19,6 +19,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT id, name, date FROM attend Where name =" .$user;
+echo $sql;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
