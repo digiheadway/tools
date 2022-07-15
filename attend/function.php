@@ -19,9 +19,9 @@ function fetch_data($user)
     $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date";
     $result = $conn->query($sql);
     echo $sql;
-    var_dump($result);
     if ($result) {
         $rows = $result->fetch_all(MYSQL_ASSOC);
+        var_dump($rows);
         $conn->close();
         return $rows;
     }
