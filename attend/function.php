@@ -1,10 +1,5 @@
 <?php
 
-$user = $_COOKIE['user'];
-if (!$user) {
-    header("Location: login.php");
-    die();
-}
 
 function fetch_data()
 {
@@ -47,6 +42,13 @@ function create_table($rows)
 function main()
 {
     try {
+
+        $user = $_COOKIE['user'];
+        if (!$user) {
+            header("Location: login.php");
+            die();
+        }
+
         $rows = fetch_data();
         var_dump($rows);
         create_table($rows);
@@ -54,10 +56,9 @@ function main()
     catch (\Throwable $th) {
         echo $th->getMessage();
     }
-
-
-
 }
+
+main();
 
 
 ?>
