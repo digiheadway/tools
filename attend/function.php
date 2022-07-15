@@ -47,6 +47,7 @@ function main()
 {
     try {
         $rows = fetch_data();
+        var_dump($rows);
         create_table($rows);
     }
     catch (\Throwable $th) {
