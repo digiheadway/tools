@@ -1,7 +1,7 @@
 <?php
 
 
-function fetch_data()
+function fetch_data($user)
 {
     $servername = "localhost";
     $username = "u240376517_tools";
@@ -16,7 +16,7 @@ function fetch_data()
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" . $user . "' GROUP BY date";
+    $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date";
     $result = $conn->query($sql);
     echo $sql;
     if ($result) {
@@ -49,7 +49,7 @@ function main()
             die();
         }
 
-        $rows = fetch_data();
+        $rows = fetch_data($user);
         var_dump($rows);
         create_table($rows);
     }
