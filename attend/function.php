@@ -57,7 +57,7 @@ function main()
         create_table($rows);
     }
     catch (\Throwable $th) {
-        echo $th->getMessage();
+        echo "Error. " . $th->getMessage();
     }
 }
 
