@@ -6,10 +6,6 @@ if (!$user) {
     die();
 }
 
-
-
-
-
 function fetch_data()
 {
     $servername = "localhost";
