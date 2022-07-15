@@ -50,7 +50,6 @@ function main()
         }
 
         $rows = fetch_data($user);
-        var_dump($rows);
         create_table($rows);
     }
     catch (\Throwable $th) {
