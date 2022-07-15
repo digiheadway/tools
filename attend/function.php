@@ -18,17 +18,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" .$user ."' GROUP BY date";
+$sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='" . $user . "' GROUP BY date";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row["date"]. "</td><td>" . $row["total_hours"]. "</td></tr>";
-  }
-  echo "</table>";
-} else {
+if ($result) {
+    $rows = $result->fetch_all(MYSQL_ASSOC);
+    var_dump($rows);
+    echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
+    foreach ($rows as $row) {
+        echo "<tr><td>" . $row["date"] . "</td><td>" . $row["total_hours"] . "</td></tr>";
+    }
+    echo "</table>";
+}
+else {
     echo "0 results";
 }
 
