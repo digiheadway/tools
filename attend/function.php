@@ -22,7 +22,7 @@ function fetch_data($user)
     var_dump($result);
     echo $sql;
     if ($result) {
-        $rows = $result->fetch_all();
+        $rows = $result->fetch_assoc();
         var_dump($rows);
         $conn->close();
         return $rows;
