@@ -20,7 +20,7 @@ function fetch_data($user)
     $result = $conn->query($sql);
     echo $sql;
     if ($result) {
-        $rows = $result->fetch(MYSQL_ASSOC);
+        $rows = $result->fetch_array(MYSQL_ASSOC);
         var_dump($rows);
         $conn->close();
         return $rows;
