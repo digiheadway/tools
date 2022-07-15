@@ -17,7 +17,7 @@ function fetch_data($user)
     }
 
     $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date";
-    $sql = "Describe `attend`";
+    // $sql = "Describe `attend`";
     $result = $conn->query($sql);
     var_dump($result);
     echo $sql;
