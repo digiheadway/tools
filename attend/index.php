@@ -39,6 +39,7 @@ var_dump($user);
                     <tbody>
                       <?php
                         foreach ($user['data'] as $row) {
+                          var_dump($row);
                           echo "<tr><td>{$row['date']}</td><td>{$row['total_hours']} Hours</td></tr>";
                         }
                       ?>
