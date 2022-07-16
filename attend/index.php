@@ -38,8 +38,8 @@ var_dump($user);
                 <table>
                     <tbody>
                       <?php
-                        foreach ($user['data'] as $key => $value) {
-                          echo "<tr><td>$key</td><td>$value Hours</td></tr>";
+                        foreach ($user['data'] as $row) {
+                          echo "<tr><td>{$row['date']}</td><td>{$row['total_hours']} Hours</td></tr>";
                         }
                       ?>
                     </tbody>
