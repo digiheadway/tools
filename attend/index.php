@@ -1,7 +1,7 @@
 <?php
 
 include('function.php');
-var_dump($data);
+var_dump($user);
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ var_dump($data);
             
         <header>
             <h1>Attendence System</h1>
-            <p>Rohit</p>
+            <p><?php echo $user['name'] ?></p>
         </header>
         <main>
 
@@ -37,46 +37,11 @@ var_dump($data);
             <section class="second_section">
                 <table>
                     <tbody>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
-                        <tr>
-                            <td>13 June</td>
-                            <td>8 Hour</td>
-                        </tr>
+                      <?php
+                        foreach ($user['data'] as $key => $value) {
+                          echo "<tr><td>$key</td><td>$value Hours</td></tr>";
+                        }
+                      ?>
                     </tbody>
                 </table>
                 <div class="address">

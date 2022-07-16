@@ -49,14 +49,17 @@ function main()
         }
 
         $rows = fetch_data($user);
-        return $rows;
+        return [
+            "name" => ucwords($user),
+            "data" => array_column($rows, "total_hours", "date")
+        ];
     }
     catch (\Throwable $th) {
         echo "Error. " . $th->getMessage();
     }
 }
 
-$data = main();
+$user = main();
 
 
 ?>
