@@ -49,14 +49,14 @@ function main()
         }
 
         $rows = fetch_data($user);
-        create_table($rows);
+        return $rows;
     }
     catch (\Throwable $th) {
         echo "Error. " . $th->getMessage();
     }
 }
 
-main();
+$data = main();
 
 
 ?>
