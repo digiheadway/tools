@@ -51,7 +51,7 @@ function main()
         $rows = fetch_data($user);
         return [
             "name" => ucwords($user),
-            "data" => array_column($rows, "total_hours", "date")
+            "data" => array_column($rows, nulll, "date")
         ];
     }
     catch (\Throwable $th) {
