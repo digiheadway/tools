@@ -1,11 +1,14 @@
 <?php
 include("Database.php");
 
+define("QUERIES", [
+    "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date"
+]);
+
 function fetch_data($user)
 {
     $db = new Database();
-    $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date";
-    $data = $db->select($sql);
+    $data = $db->select(QUERIES["HOURS_SPENT"]);
     $db->close();
     return $data;
 }

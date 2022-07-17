@@ -2,6 +2,18 @@
 
 include('function.php');
 var_dump($user);
+$hour_rows = "";
+$half_days = 0;
+$full_days = 0;
+foreach ($user['data'] as $row) {
+    $total_hours = intval($row['total_hours']);
+    $hour_rows .= "<tr><td>{$row['date']}</td><td>$total_hours Hours</td></tr>";
+    if($total_hours >= 8){
+        $full_days++;
+    }else{
+        $half_days++;
+    }
+  }
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +40,7 @@ var_dump($user);
                 <button>Chek in </button>
                 <div class="grop_contant">
                     <p><b>This Month</b></p>
-                    <p>15 Full Day + 14 Half Day</p>
+                    <p><?php echo "$full_days Full Days + $half_days Half Days" ?></p>
                     <p><b>Or</b> 345 Hour Spent</p>
                 </div>
                
@@ -36,13 +48,7 @@ var_dump($user);
             
             <section class="second_section">
                 <table>
-                    <tbody>
-                      <?php
-                        foreach ($user['data'] as $row) {
-                          echo "<tr><td>{$row['date']}</td><td>{$row['total_hours']} Hours</td></tr>";
-                        }
-                      ?>
-                    </tbody>
+                    <tbody> <?php echo $hour_rows; ?> </tbody>
                 </table>
                 <div class="address">
                     <table>
