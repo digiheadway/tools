@@ -1,41 +1,13 @@
 <?php
-
+include("Database.php");
 
 function fetch_data($user)
 {
-    $servername = "localhost";
-    $username = "u240376517_tools";
-    $password = "#DNhomg$:p7L";
-    $dbname = "u240376517_tools";
-
-    // Create connection        
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection        
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+    $db = new Database();
     $sql = "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user' GROUP BY date";
-    $result = $conn->query($sql);
-    if ($result) {
-        $rows = $result->fetch_all(MYSQLI_ASSOC);
-        $conn->close();
-        return $rows;
-    }
-    else {
-        $conn->close();
-        throw new Exception('Error' . $conn->error, 1);
-    }
-}
-
-function create_table($rows)
-{
-    echo "<table><tr><th>Date</th><th>Time Spent</th></tr>";
-    foreach ($rows as $row) {
-        echo "<tr><td>" . $row["date"] . "</td><td>" . $row["total_hours"] . "</td></tr>";
-    }
-    echo "</table>";
+    $data = $db->select($sql);
+    $db->close();
+    return $data;
 }
 
 function main()
@@ -48,10 +20,9 @@ function main()
             die();
         }
 
-        $rows = fetch_data($user);
         return [
             "name" => ucwords($user),
-            "data" => $rows
+            "data" => fetch_data($user)
         ];
     }
     catch (\Throwable $th) {
