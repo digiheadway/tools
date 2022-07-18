@@ -63,7 +63,7 @@ let sessionTimeDiv = document.querySelector("#session_timing");
 if (sessionTimeDiv) {
   let checkInTime = sessionTimeDiv.dataset.time;
   setInterval(function () {
-    let diff_in_sec = new Date() - new Date(checkInTime) / 1000;
+    let diff_in_sec = (new Date() - new Date(checkInTime)) / 1000;
     let hours = parseInt(diff_in_sec / (60 * 60))
       .toString()
       .padStart(2, 0);
