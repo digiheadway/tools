@@ -28,7 +28,7 @@ function main($user_name)
     if ($data["action"] == "checkIn") {
         $today = date("Y-m-d");
 
-        $query = "INSERT INTO attend (name, date, checkin_time, checkin_loc, checkin_ip) VALUES ('$user_name','$today', '$time', POINT($lat $lon), '$ip')";
+        $query = "INSERT INTO attend (name, date, checkin_time, checkin_loc, checkin_ip) VALUES ('$user_name','$today', '$time', POINT($lat,  $lon), '$ip')";
         process_query($query);
     }
     else if ($data["action"] == "checkOut") {
