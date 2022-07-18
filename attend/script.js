@@ -73,6 +73,6 @@ if (sessionTimeDiv) {
     let seconds = parseInt(diff_in_sec % 60)
       .toString()
       .padStart(2, 0);
-    sessionTimeDiv.textContent = `${hours}:${minutes}:${seconds}`;
+    sessionTimeDiv.textContent = `Session time: ${hours}:${minutes}:${seconds}`;
   }, 1000);
 }
