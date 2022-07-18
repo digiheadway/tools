@@ -19,7 +19,7 @@ function fetch_data()
     $db = new Database();
     $data = [
         "hours_spent" => $db->select(QUERIES["HOURS_SPENT"]),
-        "last_checkout" => $db->select(QUERIES["LAST_CHECKOUT"])
+        "last_checkout" => $db->select(QUERIES["LAST_CHECKOUT"])[0]
     ];
     $db->close();
     return $data;
@@ -33,7 +33,7 @@ function main($user_name)
             "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
             "hours_spent" => $data["hours_spent"],
-            "last_checkout" => $data["last_checkout"],
+            "last_checkout_id" => $data["last_checkout"]['id'] ?? -1,
         ];
     }
     catch (\Throwable $th) {
