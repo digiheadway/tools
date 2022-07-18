@@ -1,9 +1,17 @@
 <?php
 include("Database.php");
-$user_name = "";
+
+$user_name = $_COOKIE['user'];
+if (!$user_name) {
+    header("Location: login.php");
+    die();
+}
+
 define("QUERIES", [
     "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user_name' GROUP BY date"
 ]);
+
+
 
 function fetch_data()
 {
@@ -13,17 +21,9 @@ function fetch_data()
     return $data;
 }
 
-function main()
+function main($user_name)
 {
-    global $user_name;
     try {
-
-        $user_name = $_COOKIE['user'];
-        if (!$user_name) {
-            header("Location: login.php");
-            die();
-        }
-
         return [
             "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
@@ -35,7 +35,7 @@ function main()
     }
 }
 
-$user = main();
+$user = main($user_name);
 
 
 ?>
