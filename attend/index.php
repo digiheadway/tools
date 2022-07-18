@@ -1,12 +1,13 @@
 <?php
 
 include('function.php');
-var_dump($user);
+
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
 $today_hours = 0;
 $today = date("Y-m-d");
+$total_hours_spent = 0;
 foreach ($user['data'] as $row) {
     $total_hours = intval($row['total_hours']);
     $hour_rows .= "<tr><td>{$row['date']}</td><td>$total_hours Hours</td></tr>";
@@ -18,9 +19,13 @@ foreach ($user['data'] as $row) {
         $half_days++;
     }
 
+    // checking today hours
     if($row['date'] == $today){
         $today_hours = $total_hours;
     }
+
+    // calculating total hours
+    $total_hours_spent += $today_hours;
 
   }
 
@@ -50,7 +55,7 @@ foreach ($user['data'] as $row) {
                 <div class="grop_contant">
                     <p><b>This Month</b></p>
                     <p><?php echo "$full_days Full Days + $half_days Half Days" ?></p>
-                    <p><b>Or</b> 345 Hour Spent</p>
+                    <p><b>Or</b> <? echo $total_hours_spent ?>  Hours Spent</p>
                 </div>
                
             </section>
