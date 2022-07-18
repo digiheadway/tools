@@ -18,14 +18,6 @@ function showPosition(position) {
     position.coords.longitude;
 }
 
-async function checkIn() {
-  console.log(`Check in`);
-  let result = await request({
-    action: "checkIn",
-  });
-  console.log(result);
-}
-
 let pos = {
   lat: 0,
   lon: 0,
@@ -38,18 +30,23 @@ if (navigator.geolocation) {
   });
 }
 
+async function checkIn() {
+  console.log(`Check in`);
+  let result = await request({ action: "checkIn" });
+  console.log(result);
+  location.reload();
+}
+
 async function checkOut(id) {
   console.log(`Check out: ${id}`);
-  let result = await request({
-    action: "checkOut",
-    id: id,
-    lat: pos.lat,
-    lon: pos.lon,
-  });
+  let result = await request({ action: "checkOut", id: id });
   console.log(result);
+  location.reload();
 }
 
 async function request(data) {
+  data.lat = pos.lat;
+  data.lon = pos.lon;
   let result = await fetch("checkings.php", {
     method: "POST",
     headers: {
@@ -58,6 +55,6 @@ async function request(data) {
     body: JSON.stringify(data),
   });
 
-  let response = await result.text();
+  let response = await result.json();
   return response;
 }
