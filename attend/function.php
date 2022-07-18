@@ -19,7 +19,7 @@ function fetch_data()
     $db = new Database();
     $data = [
         "hours_spent" => $db->select(QUERIES["HOURS_SPENT"]),
-        "LAST_CHECKOUT" => $db->select(QUERIES["LAST_CHECKOUT"])
+        "last_checkout" => $db->select(QUERIES["LAST_CHECKOUT"])
     ];
     $db->close();
     return $data;
