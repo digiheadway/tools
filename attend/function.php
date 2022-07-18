@@ -33,7 +33,7 @@ function main($user_name)
             "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
             "hours_spent" => $data["hours_spent"],
-            "last_checkout_id" => $data["last_checkout"]['id'] ?? -1,
+            "last_checkout_id" => $data["last_checkout"]['id'] ?? null
         ];
     }
     catch (\Throwable $th) {

@@ -48,7 +48,13 @@ foreach ($user['hours_spent'] as $row) {
         <main>
             <section class="first_section">
                 <p>Today You Spent: <? echo $today_hours  ?> Hour in Office</p>
-                <button>Chek in </button>
+                <?php if($user['last_checkout_id'] == null) {?>
+                    <button onclick="checkIn()">Check in </button>
+                <?php } else { ?>
+                    <button onclick="checkOut($user['last_checkout_id'])">Check Out </button>
+                <?php } ?>
+
+               
                 <div class="grop_contant">
                     <p><b>This Month</b></p>
                     <p><?php echo "$full_days Full Days + $half_days Half Days" ?></p>
