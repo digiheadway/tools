@@ -20,7 +20,7 @@ if (!$user_name) {
 
 function main($user_name)
 {
-    $time = date("h:i:s");
+    $time = date("H:i:s");
     $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
     $data = json_decode(trim(file_get_contents("php://input")), true);
     $lat = $data["lat"];
