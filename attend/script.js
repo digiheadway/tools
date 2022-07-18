@@ -18,14 +18,15 @@ function showPosition(position) {
     position.coords.longitude;
 }
 
-function checkIn() {
+async function checkIn() {
   console.log(`Check in`);
-  console.log(await request({
+  let result = await request({
     "action": "checkIn"
-  }))
+  })
+  console.log(result);
 }
 
-function checkOut(id) {
+async function checkOut(id) {
   console.log(`Check out: ${id}`);
   navigator.geolocation.getCurrentPosition(position => {
     console.log(await request({
