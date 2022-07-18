@@ -51,7 +51,7 @@ foreach ($user['hours_spent'] as $row) {
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick="checkIn()">Check in </button>
                 <?php } else { ?>
-                    <button onclick="checkOut($user['last_checkout_id'])">Check Out </button>
+                    <button onclick="checkOut(<?php echo $user['last_checkout_id'] ?> )">Check Out </button>
                 <?php } ?>
 
                
