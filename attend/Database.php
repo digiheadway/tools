@@ -26,7 +26,7 @@ class Database
     {
         $result = $this->conn->query($query);
         if ($result == false) {
-            throw new Exception('Error' . $this->conn->error, 1);
+            throw new Exception('Error' . $this->conn->error . $query, 1);
         }
         return $result;
     }
