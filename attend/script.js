@@ -26,22 +26,35 @@ async function checkIn() {
   console.log(result);
 }
 
+let pos = {
+  lat: 0,
+  lon: 0,
+};
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    pos.lat = position.coords.latitude;
+    pos.lon = position.coords.longitude;
+  });
+}
+
 async function checkOut(id) {
   console.log(`Check out: ${id}`);
-  navigator.geolocation.getCurrentPosition(async function (position) {
-    let result = await request({
-      action: "checkOut",
-      id: id,
-      lat: position.coords.latitude,
-      lon: position.coords.longitude,
-    });
-    console.log(result);
+  let result = await request({
+    action: "checkOut",
+    id: id,
+    lat: pos.lat,
+    lon: pos.lon,
   });
+  console.log(result);
 }
 
 async function request(data) {
   let result = await fetch("checkings.php", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(data),
   });
 
