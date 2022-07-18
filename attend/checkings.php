@@ -1,5 +1,6 @@
 <?php
 
+date_default_timezone_set("Asia/Calcutta"); 
 
 
 function process_query($query)
