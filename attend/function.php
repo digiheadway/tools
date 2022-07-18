@@ -25,6 +25,7 @@ function main()
         }
 
         return [
+            "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
             "data" => fetch_data()
         ];
