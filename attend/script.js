@@ -29,12 +29,13 @@ async function checkIn() {
 async function checkOut(id) {
   console.log(`Check out: ${id}`);
   navigator.geolocation.getCurrentPosition(position => {
-    console.log(await request({
+    let result = await request({
       "action": "checkOut",
       "id": id,
       "lat": position.coords.latitude,
       "lon": position.coords.longitude,
-    }));
+    });
+    console.log(result);
   });
  
 }
