@@ -45,6 +45,6 @@ async function request(data) {
     body: JSON.stringify(data),
   });
 
-  let response = await result.json();
+  let response = await result.text();
   return response;
 }
