@@ -17,7 +17,7 @@ if (!$user_name) {
     die();
 }
 
-function main()
+function main($user_name)
 {
     $time = date("h:i:s");
     $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
@@ -39,7 +39,7 @@ function main()
 }
 
 try {
-    main();
+    main($user_name);
     echo json_encode(['res' => 'success']);
 }
 catch (\Throwable $th) {
