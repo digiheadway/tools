@@ -2,6 +2,6 @@
 
 $data = json_decode(trim(file_get_contents("php://input")), true);
 
-echo json_decode($data);
+echo json_encode($data);
 
 ?>
