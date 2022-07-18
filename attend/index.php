@@ -1,7 +1,6 @@
 <?php
 
 include('function.php');
-var_dump($user);
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
