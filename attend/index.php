@@ -25,9 +25,8 @@ foreach ($user['data'] as $row) {
     }
 
     // calculating total hours
-    $total_hours_spent = $total_hours_spent + $today_hours;
-
-  }
+    $total_hours_spent = $total_hours_spent + $total_hours;
+}
 
 ?>
 <!DOCTYPE html>
