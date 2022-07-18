@@ -36,7 +36,7 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css">                
+    <link rel="stylesheet" href="style.css?v=0.0.0">                
 </head>
 <body>
     <div class="container">
@@ -49,9 +49,9 @@ foreach ($user['hours_spent'] as $row) {
             <section class="first_section">
                 <p>Today You Spent: <? echo $today_hours  ?> Hour in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
-                    <button onclick="checkIn()">Check in </button>
+                    <button><a href='?checkin=1'>Check in</a> </button>
                 <?php } else { ?>
-                    <button onclick="checkOut(<?php echo $user['last_checkout_id'] ?> )">Check Out </button>
+                    <button><a href='?checkout=<?php echo $user['last_checkout_id'] ?>'>Check out</a> </button>
                 <?php } ?>
 
                

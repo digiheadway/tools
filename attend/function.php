@@ -1,6 +1,7 @@
 <?php
 include("Database.php");
-
+echo $_GET["checkin"] ?? null;
+echo $_GET["checkout"] ?? null;
 $user_name = $_COOKIE['user'];
 if (!$user_name) {
     header("Location: login.php");

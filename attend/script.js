@@ -17,11 +17,3 @@ function showPosition(position) {
     "<br>Longitude: " +
     position.coords.longitude;
 }
-
-function checkIn() {
-  console.log(`Check in`);
-}
-
-function checkOut(id) {
-  console.log(`Check out: ${id}`);
-}
