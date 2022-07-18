@@ -1,6 +1,7 @@
 <?php
 
 include('function.php');
+
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
@@ -48,9 +49,9 @@ foreach ($user['hours_spent'] as $row) {
             <section class="first_section">
                 <p>Today You Spent: <? echo $today_hours  ?> Hour in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
-                    <button><a href='?checkin=1'>Check in</a> </button>
+                    <button onclick='checkIn()'>Check in</a> </button>
                 <?php } else { ?>
-                    <button><a href='?checkout=<?php echo $user['last_checkout_id'] ?>'>Check out</a> </button>
+                    <button onclick="checkOut(<?php echo $user['last_checkout_id'] ?>)">Check out </button>
                 <?php } ?>
 
                
@@ -87,6 +88,6 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.0.1"></script>
+    <script src="script.js?v=0.0.2"></script>
 </body>
 </html>

@@ -1,10 +1,19 @@
 <?php
 include("Database.php");
-echo $_GET["checkin"] ?? null;
-echo $_GET["checkout"] ?? null;
+
+
 $user_name = $_COOKIE['user'];
 if (!$user_name) {
     header("Location: login.php");
+    die();
+}
+
+$checkIn = $_GET["checkin"] ?? null;
+$checkOut = $_GET["checkout"] ?? null;
+
+if ($checkIn or $checkOut) {
+
+    header("Location: index.php");
     die();
 }
 
