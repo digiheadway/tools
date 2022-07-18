@@ -47,19 +47,15 @@ foreach ($user['data'] as $row) {
             <p><?php echo $user['name'] ?></p>
         </header>
         <main>
-
             <section class="first_section">
-
                 <p>Today You Spent: <? echo $today_hours  ?> Hour in Office</p>
                 <button>Chek in </button>
                 <div class="grop_contant">
                     <p><b>This Month</b></p>
                     <p><?php echo "$full_days Full Days + $half_days Half Days" ?></p>
-                    <p><b>Or</b> <? echo $total_hours_spent ?>  Hours Spent</p>
+                    <p><b>Or</b> <?php echo $total_hours_spent ?>  Hours Spent</p>
                 </div>
-               
             </section>
-            
             <section class="second_section">
                 <table>
                     <tbody> <?php echo $hour_rows; ?> </tbody>
