@@ -1,14 +1,14 @@
 <?php
 
 include('function.php');
-
+var_dump($user);
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
 $today_hours = 0;
 $today = date("Y-m-d");
 $total_hours_spent = 0;
-foreach ($user['data'] as $row) {
+foreach ($user['hours_spent'] as $row) {
     $total_hours = intval($row['total_hours']);
     $hour_rows .= "<tr><td>{$row['date']}</td><td>$total_hours Hours</td></tr>";
     

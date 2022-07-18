@@ -8,7 +8,8 @@ if (!$user_name) {
 }
 
 define("QUERIES", [
-    "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user_name' GROUP BY date"
+    "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user_name' GROUP BY date",
+    "LAST_CHECKOUT" => "SELECT id FROM `attend` WHERE checkout_time is null and name = '$user_name' ORDER BY id DESC LIMIT 1;",
 ]);
 
 
@@ -16,18 +17,23 @@ define("QUERIES", [
 function fetch_data()
 {
     $db = new Database();
-    $data = $db->select(QUERIES["HOURS_SPENT"]);
+    $data = [
+        "hours_spent" => $db->select(QUERIES["HOURS_SPENT"]),
+        "LAST_CHECKOUT" => $db->select(QUERIES["LAST_CHECKOUT"])
+    ];
     $db->close();
     return $data;
 }
 
 function main($user_name)
 {
+    $data = fetch_data();
     try {
         return [
             "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
-            "data" => fetch_data()
+            "hours_spent" => $data["hours_spent"],
+            "last_checkout" => $data["last_checkout"],
         ];
     }
     catch (\Throwable $th) {
