@@ -42,7 +42,7 @@ async function checkOut(id) {
 async function request(data) {
   let result = await fetch("checking.php", {
     method: "POST",
-    body: JSON.stringify($data),
+    body: JSON.stringify(data),
   });
 
   let response = await result.json();
