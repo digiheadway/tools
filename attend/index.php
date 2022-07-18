@@ -2,6 +2,7 @@
 
 include('function.php');
 
+
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
@@ -51,7 +52,8 @@ foreach ($user['hours_spent'] as $row) {
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
                 <?php } else { ?>
-                    <button onclick="checkOut(<?php echo $user['last_checkout_id'] ?>)">Check out </button>
+                    <p id="session_timing" data-time='<?php echo $user['checkin_time'] ?>'>Session Time: </p>
+                    <button style='background-color: tomato;' onclick="checkOut(<?php echo $user['last_checkout_id'] ?>)">Check out </button>
                 <?php } ?>
 
                
@@ -88,6 +90,6 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.0"></script>
+    <script src="script.js?v=0.1.1"></script>
 </body>
 </html>

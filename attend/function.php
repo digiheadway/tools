@@ -19,7 +19,7 @@ if ($checkIn or $checkOut) {
 
 define("QUERIES", [
     "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user_name' GROUP BY date",
-    "LAST_CHECKOUT" => "SELECT id FROM `attend` WHERE checkout_time is null and name = '$user_name' ORDER BY id DESC LIMIT 1;",
+    "LAST_CHECKOUT" => "SELECT id, CONCAT(date, ' ', checkin_time) as checkin_time FROM `attend` WHERE checkout_time is null and name = '$user_name' ORDER BY id DESC LIMIT 1;",
 ]);
 
 
@@ -43,7 +43,8 @@ function main($user_name)
             "sql" => QUERIES["HOURS_SPENT"],
             "name" => ucwords($user_name),
             "hours_spent" => $data["hours_spent"],
-            "last_checkout_id" => $data["last_checkout"]['id'] ?? null
+            "last_checkout_id" => $data["last_checkout"]['id'] ?? null,
+            "checkin_time" => $data["last_checkout"]['checkin_time']
         ];
     }
     catch (\Throwable $th) {
