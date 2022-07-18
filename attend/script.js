@@ -40,7 +40,7 @@ async function checkOut(id) {
 }
 
 async function request(data) {
-  let result = await fetch("checking.php", {
+  let result = await fetch("checkings.php", {
     method: "POST",
     body: JSON.stringify(data),
   });
