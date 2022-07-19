@@ -26,7 +26,7 @@ function main($user_name)
     $data = json_decode(trim(file_get_contents("php://input")), true);
     $lat = $data["lat"];
     $lon = $data["lon"];
-    $location = "ST_GeomFromText('POINT($lat,  $lon)')";
+    $location = "ST_GeomFromText('POINT($lat  $lon)')";
 
     if ($data["action"] == "checkIn") {
         $today = date("Y-m-d");
