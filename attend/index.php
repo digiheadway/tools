@@ -64,9 +64,9 @@ foreach ($user['hours_spent'] as $row) {
                     <p><?php echo "$full_days Full Days + $half_days Half Days" ?></p>
                     <p><b>Or</b> <?php echo $total_hours_spent ?>  Hours Spent</p>
                 </div>
+                <p>Date-wise Durations</p>
             </section>
             <section class="second_section">
-                <p>Date-wise Durations</p>
                 <table>
                     <tbody> <?php echo $hour_rows; ?> </tbody>
                 </table>
