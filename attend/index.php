@@ -10,6 +10,7 @@ $today_duration = 0;
 $today = date("Y-m-d");
 $total_hours_spent = 0;
 foreach ($user['hours_spent'] as $row) {
+    if($row['total_seconds'] == null) continue;
     $total_hours = intval($row['total_seconds'] / (60*60));
     $duration = gmdate("h:i", $row["total_seconds"]);
     $date = date("d M", strtotime($row['date']));  
