@@ -5,8 +5,7 @@ date_default_timezone_set("Asia/Calcutta");
 function notify($username, $action)
 {
     $message = urlencode("$username $action!");
-    $phone = "9068062563,9050995106,8529766558";
-    $phone = "8529766558";
+    $phone = "9068062563,9050995106";
     $url = "https://wa.digiheadway.com/?pn=$phone&msg=$message";
 
     file_get_contents($url);

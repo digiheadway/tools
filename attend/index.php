@@ -12,7 +12,7 @@ $total_hours_spent = 0;
 foreach ($user['hours_spent'] as $row) {
     if($row['total_seconds'] == null) continue;
     $total_hours = intval($row['total_seconds'] / (60*60));
-    $duration = gmdate("h:i", $row["total_seconds"]);
+    $duration = gmdate("H:i", $row["total_seconds"]);
     $date = date("d M", strtotime($row['date']));  
     $hour_rows .= "<tr><td>$date</td><td>$duration</td></tr>";
     
