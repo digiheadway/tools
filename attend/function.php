@@ -18,7 +18,7 @@ if ($checkIn or $checkOut) {
 }
 
 define("QUERIES", [
-    "HOURS_SPENT" => "SELECT date, sum(time_spent) as total_hours FROM attend WHERE name='$user_name' GROUP BY date",
+    "HOURS_SPENT" => "SELECT date, cast((sum(TO_SECONDS(checkout_time) - TO_SECONDS(checkin_time))) as int) as total_seconds FROM attend WHERE name='$user_name' GROUP BY date",
     "LAST_CHECKOUT" => "SELECT id, CONCAT(date, ' ', checkin_time) as checkin_time FROM `attend` WHERE checkout_time is null and name = '$user_name' ORDER BY id DESC LIMIT 1;",
 ]);
 

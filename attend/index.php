@@ -10,8 +10,9 @@ $today_hours = 0;
 $today = date("Y-m-d");
 $total_hours_spent = 0;
 foreach ($user['hours_spent'] as $row) {
-    $total_hours = intval($row['total_hours']);
-    $hour_rows .= "<tr><td>{$row['date']}</td><td>$total_hours Hours</td></tr>";
+    $total_hours = intval($row['total_seconds'] / (60*60));
+    $duration = gmdate("h:i", $row["total_seconds"]);
+    $hour_rows .= "<tr><td>{$row['date']}</td><td>$duration Hours</td></tr>";
     
     // Calculating half & full days
     if($total_hours >= 8){
