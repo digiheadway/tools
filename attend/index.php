@@ -6,13 +6,14 @@ include('function.php');
 $hour_rows = "";
 $half_days = 0;
 $full_days = 0;
-$today_hours = 0;
+$today_duration = 0;
 $today = date("Y-m-d");
 $total_hours_spent = 0;
 foreach ($user['hours_spent'] as $row) {
     $total_hours = intval($row['total_seconds'] / (60*60));
     $duration = gmdate("h:i", $row["total_seconds"]);
-    $hour_rows .= "<tr><td>{$row['date']}</td><td>$duration Hours</td></tr>";
+    $date = date("d M", strtotime($row['date']));  
+    $hour_rows .= "<tr><td>$date</td><td>$duration</td></tr>";
     
     // Calculating half & full days
     if($total_hours >= 8){
@@ -23,7 +24,7 @@ foreach ($user['hours_spent'] as $row) {
 
     // checking today hours
     if($row['date'] == $today){
-        $today_hours = $total_hours;
+        $today_duration = $duration;
     }
 
     // calculating total hours
@@ -49,7 +50,7 @@ foreach ($user['hours_spent'] as $row) {
         </header>
         <main>
             <section class="first_section">
-                <p>Today You Spent: <? echo $today_hours  ?> Hour in Office</p>
+                <p>Today You Spent: <? echo $today_duration  ?> Hour in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
                 <?php } else { ?>
