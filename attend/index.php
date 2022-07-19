@@ -50,7 +50,7 @@ foreach ($user['hours_spent'] as $row) {
         </header>
         <main>
             <section class="first_section">
-                <p>Today You Spent: <? echo $today_duration  ?> Hour in Office</p>
+                <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
                 <?php } else { ?>
@@ -66,6 +66,7 @@ foreach ($user['hours_spent'] as $row) {
                 </div>
             </section>
             <section class="second_section">
+                <p>Date-wise Durations</p>
                 <table>
                     <tbody> <?php echo $hour_rows; ?> </tbody>
                 </table>
