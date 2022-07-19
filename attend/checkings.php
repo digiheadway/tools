@@ -2,7 +2,15 @@
 
 date_default_timezone_set("Asia/Calcutta");
 
+function notify($username, $action)
+{
+    $message = urlencode("$username $action!");
+    $phone = "9068062563,9050995106,8529766558";
+    $phone = "8529766558";
+    $url = "https://wa.digiheadway.com/?pn=$phone&msg=$message";
 
+    file_get_contents($url);
+}
 
 function process_query($query)
 {
@@ -27,18 +35,21 @@ function main($user_name)
     $lat = $data["lat"];
     $lon = $data["lon"];
     $location = "ST_GeomFromText('POINT($lat  $lon)')";
-
+    $action = "checked in";
     if ($data["action"] == "checkIn") {
         $today = date("Y-m-d");
-
+        
         $query = "INSERT INTO attend (name, date, checkin_time, checkin_loc, checkin_ip) VALUES ('$user_name','$today', '$time', $location, '$ip')";
         process_query($query);
     }
     else if ($data["action"] == "checkOut") {
+        $action = "checked out";
         $id = $data["id"];
         $query = "UPDATE attend SET checkout_time = '$time', checkout_ip = '$ip', checkout_loc = $location WHERE id = $id";
         process_query($query);
     }
+
+    notify($user_name, $action );
 }
 
 try {
