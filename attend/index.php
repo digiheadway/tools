@@ -75,15 +75,15 @@ foreach ($user['hours_spent'] as $row) {
                         <tbody>
                             <tr>
                                 <td>Location</td>
-                                <td></td>
+                                <td id='location'></td>
                             </tr>
                             <tr>
                                 <td>IP</td>
-                                <td></td>
+                                <td><?php echo $_SERVER["HTTP_CF_CONNECTING_IP"] ?></td>
                             </tr>
                             <tr>
                                 <td>Time</td>
-                                <td></td>
+                                <td id='timer'></td>
                             </tr>
                         </tbody>
                     </table>
@@ -93,6 +93,8 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.3"></script>
+    <script src="script.js?v=0.1.5"></script>
+   
+
 </body>
 </html>

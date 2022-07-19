@@ -1,22 +1,9 @@
-var x = document.getElementById("demo");
+let locationDiv = document.querySelector("#location");
+let timeDiv = document.querySelector("#timer");
 
-getLocation();
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML =
-    "Latitude: " +
-    position.coords.latitude +
-    "<br>Longitude: " +
-    position.coords.longitude;
-}
+setInterval(() => {
+  timeDiv.textContent = new Date().toTimeString().split(" ")[0];
+}, 1000);
 
 let pos = {
   lat: 0,
@@ -27,6 +14,7 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     pos.lat = position.coords.latitude;
     pos.lon = position.coords.longitude;
+    locationDiv?.textContent = `(${pos.lat}, ${pos.lon})`;
   });
 }
 
@@ -64,15 +52,14 @@ if (sessionTimeDiv) {
   let checkInTime = sessionTimeDiv.dataset.time;
   setInterval(function () {
     let diff_in_sec = (new Date() - new Date(checkInTime)) / 1000;
-    let hours = parseInt(diff_in_sec / (60 * 60))
-      .toString()
-      .padStart(2, 0);
-    let minutes = parseInt((diff_in_sec / 60) % 60)
-      .toString()
-      .padStart(2, 0);
-    let seconds = parseInt(diff_in_sec % 60)
-      .toString()
-      .padStart(2, 0);
+    let hours = padNumber(diff_in_sec / (60 * 60));
+    let minutes = padNumber((diff_in_sec / 60) % 60);
+    let seconds = padNumber(diff_in_sec % 60);
+
     sessionTimeDiv.textContent = `Session time: ${hours}:${minutes}:${seconds}`;
   }, 1000);
+}
+
+function padNumber(float) {
+  return parseInt(float).toString().padStart(2, 0);
 }
