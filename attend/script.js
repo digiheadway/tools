@@ -14,7 +14,7 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     pos.lat = position.coords.latitude;
     pos.lon = position.coords.longitude;
-    locationDiv?.textContent = `(${pos.lat}, ${pos.lon})`;
+    locationDiv.textContent = `(${pos.lat}, ${pos.lon})`;
   });
 }
 

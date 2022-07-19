@@ -93,7 +93,7 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.5"></script>
+    <script src="script.js?v=0.1.6"></script>
    
 
 </body>
