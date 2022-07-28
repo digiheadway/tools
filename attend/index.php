@@ -40,7 +40,7 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css?v=0.0.2">                
+    <link rel="stylesheet" href="style.css?v=0.0.3">                
 </head>
 <body>
     <div class="container">
@@ -51,6 +51,7 @@ foreach ($user['hours_spent'] as $row) {
         </header>
         <main>
             <section class="first_section">
+            <img src="<?php echo $img[array_rand($img)]; ?>" class="center">
                 <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
@@ -94,8 +95,8 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.6"></script>
+    <script src="script.js?v=0.1.7"></script>
    
-
+    <div id="loader"><img src="loading.png"  alt="" width="100%"></div>
 </body>
 </html>

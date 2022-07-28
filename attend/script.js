@@ -19,6 +19,7 @@ if (navigator.geolocation) {
 }
 
 async function checkIn() {
+  document.getElementById('loader').style.display = 'block';
   console.log(`Check in`);
   let result = await request({ action: "checkIn" });
   console.log(result);
@@ -26,6 +27,7 @@ async function checkIn() {
 }
 
 async function checkOut(id) {
+  document.getElementById('loader').style.display = 'block';
   console.log(`Check out: ${id}`);
   let result = await request({ action: "checkOut", id: id });
   console.log(result);

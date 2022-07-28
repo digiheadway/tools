@@ -40,20 +40,8 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css?v=0.0.4">          
-    <style>
-        #loader{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top:0px;
-            display:none;
-            overflow: hidden
-        }
-        .center{
-            min-height:300px;
-        }
-    </style>      
+    <link rel="stylesheet" href="style.css?v=0.0.5">          
+  
 </head>
 <body>
     <div class="container">
@@ -179,7 +167,7 @@ function padNumber(float) {
 }
 
    </script>
-   <img src="loading.png" width="100%" alt="" id="loader">
+   <div id="loader"><img src="loading.png"  alt="" width="100%"></div>
 
 </body>
 </html>
