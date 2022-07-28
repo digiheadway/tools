@@ -2,7 +2,7 @@
 
 date_default_timezone_set("Asia/Calcutta");
 
-function notify($username, $action)
+function notify($username, $action, $time)
 {
     $message = urlencode("$username $action! at $time");
     $phone = "9068062563,9050995106";
@@ -44,7 +44,7 @@ function main($user_name)
     }
 
     $db->close();
-    notify($user_name, $action);
+    notify($user_name, $action, $time);
 }
 
 try {
