@@ -62,7 +62,7 @@ foreach ($user['hours_spent'] as $row) {
                
                 <div class="grop_contant">
                     <p><b>This Month</b></p>
-                    <p><?php echo "$full_days Full Days + $half_days Paertial Days" ?></p>
+                    <p><?php echo "$full_days Full Days + $half_days Partial Days" ?></p>
                     <p><b>Or</b> <?php echo $total_hours_spent ?>  Hours Spent</p>
                 </div>
                 <p>Date-wise Durations</p>
