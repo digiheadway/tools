@@ -40,7 +40,7 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css?v=0.0.5">                
+    <link rel="stylesheet" href="style.css?v=0.0.6">                
 </head>
 <body>
     <div class="container" id="container">
@@ -96,7 +96,7 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.7"></script>
+    <script src="script.js?v=0.1.8"></script>
    
     <div id="loader"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_s03mfrde.json"  background="transparent"  speed="1"  style="height: 50%;"   autoplay></lottie-player><h1><h1>Activity Saved!</h1>
