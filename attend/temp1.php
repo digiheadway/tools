@@ -50,6 +50,9 @@ foreach ($user['hours_spent'] as $row) {
             display:none;
             overflow: hidden
         }
+        .center{
+            min-height:300px;
+        }
     </style>      
 </head>
 <body>
@@ -128,7 +131,7 @@ if (navigator.geolocation) {
 }
 
 async function checkIn() {
-    document.getElementById('loader').style.display = 'none';
+    document.getElementById('loader').style.display = 'block';
   console.log(`Check in`);
   let result = await request({ action: "checkIn" });
   console.log(result);
@@ -136,7 +139,7 @@ async function checkIn() {
 }
 
 async function checkOut(id) {
-    document.getElementById('loader').style.display = 'none';
+    document.getElementById('loader').style.display = 'block';
   console.log(`Check out: ${id}`);
   let result = await request({ action: "checkOut", id: id });
   console.log(result);
@@ -176,6 +179,7 @@ function padNumber(float) {
 }
 
    </script>
-<img src="loading-gif.gif" width="100%" alt="" id="loader" >
+   <img src="loading.png" width="100%" alt="">
+
 </body>
 </html>
