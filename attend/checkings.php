@@ -19,7 +19,7 @@ if (!$user_name) {
 
 function main($user_name)
 {
-    include_once("Database.php");
+    include_once("database.php");
     $db = new Database();
 
     $time = date("H:i:s");
