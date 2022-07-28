@@ -40,8 +40,6 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
     <title>Time Tracker</title>
-    <link rel="manifest" href="/manifest.json" />
-
     <link rel="stylesheet" href="style.css?v=0.0.6">        
     <meta http-equiv="refresh" content="300">
         
@@ -107,10 +105,6 @@ foreach ($user['hours_spent'] as $row) {
 <p>
     Refresh to record new activity
 </p></div>
-<script type="module">
-   import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-   const el = document.createElement('pwa-update');
-   document.body.appendChild(el);
-</script>
+
 </body>
 </html>
