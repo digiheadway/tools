@@ -52,6 +52,7 @@ foreach ($user['hours_spent'] as $row) {
         <main>
             <section class="first_section">
             <img src="<?php echo $img[array_rand($img)]; ?>" class="center">
+            <hr style="margin:10px;">
                 <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
