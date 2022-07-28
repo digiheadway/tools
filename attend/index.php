@@ -43,7 +43,7 @@ foreach ($user['hours_spent'] as $row) {
     <link rel="stylesheet" href="style.css?v=0.0.5">                
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
             
         <header>
             <h1>Attendence System</h1>
@@ -98,6 +98,10 @@ foreach ($user['hours_spent'] as $row) {
     </div>
     <script src="script.js?v=0.1.7"></script>
    
-    <div id="loader"><img src="loading.png"  alt="" width="100%"></div>
+    <div id="loader"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_s03mfrde.json"  background="transparent"  speed="1"  style="height: 50%;"   autoplay></lottie-player><h1><h1>Activity Saved!</h1>
+<p>
+    Refresh to record new activity
+</p></div>
 </body>
 </html>

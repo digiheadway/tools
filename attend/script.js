@@ -19,7 +19,7 @@ if (navigator.geolocation) {
 }
 
 async function checkIn() {
-  document.getElementById('loader').style.display = 'block';
+  processdone();
   console.log(`Check in`);
   let result = await request({ action: "checkIn" });
   console.log(result);
@@ -27,7 +27,7 @@ async function checkIn() {
 }
 
 async function checkOut(id) {
-  document.getElementById('loader').style.display = 'block';
+  processdone();
   console.log(`Check out: ${id}`);
   let result = await request({ action: "checkOut", id: id });
   console.log(result);
@@ -64,4 +64,8 @@ if (sessionTimeDiv) {
 
 function padNumber(float) {
   return parseInt(float).toString().padStart(2, 0);
+}
+function processdone(){
+  document.getElementById('loader').style.display = 'block';
+  document.getElementById('container').style.display = 'none';
 }
