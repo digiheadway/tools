@@ -42,7 +42,7 @@ foreach ($user['hours_spent'] as $row) {
     <title>Attandance Fetch Data</title>
     <link rel="stylesheet" href="style.css?v=0.0.4">          
     <style>
-        .loader{
+        #loader{
             position: absolute;
             width: 100%;
             height: 100%;
@@ -127,6 +127,9 @@ if (navigator.geolocation) {
 }
 
 async function checkIn() {
+    document.getElementById('loader').style.display = 'none';
+
+
   console.log(`Check in`);
   let result = await request({ action: "checkIn" });
   console.log(result);
@@ -134,6 +137,9 @@ async function checkIn() {
 }
 
 async function checkOut(id) {
+    document.getElementById('loader').style.display = 'none';
+
+
   console.log(`Check out: ${id}`);
   let result = await request({ action: "checkOut", id: id });
   console.log(result);
@@ -173,6 +179,6 @@ function padNumber(float) {
 }
 
    </script>
-<img src="https://media0.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" alt="" class="loader" >
+<img src="https://media0.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" alt="" id="loader" >
 </body>
 </html>
