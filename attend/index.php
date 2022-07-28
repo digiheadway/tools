@@ -56,7 +56,7 @@ foreach ($user['hours_spent'] as $row) {
                     <button onclick='checkIn()'>Check in</a> </button>
                 <?php } else { ?>
                     <p id="session_timing" data-time='<?php echo $user['checkin_time'] ?>'>Session Time: </p>
-                    <button style='background-color: tomato;' onclick="checkOut(<?php echo $user['last_checkout_id'] ?>)">Check out </button>
+                    <button style='background-color: #333333;' onclick="checkOut(<?php echo $user['last_checkout_id'] ?>)">Check out </button>
                 <?php } ?>
 
                
