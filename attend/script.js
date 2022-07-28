@@ -23,7 +23,6 @@ async function checkIn() {
   console.log(`Check in`);
   let result = await request({ action: "checkIn" });
   console.log(result);
-  location.reload();
 }
 
 async function checkOut(id) {
@@ -31,7 +30,6 @@ async function checkOut(id) {
   console.log(`Check out: ${id}`);
   let result = await request({ action: "checkOut", id: id });
   console.log(result);
-  location.reload();
 }
 
 async function request(data) {
