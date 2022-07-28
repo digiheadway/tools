@@ -1,5 +1,5 @@
 <?php
-include("Database.php");
+include("database.php");
 
 
 $user_name = $_COOKIE['user'];
