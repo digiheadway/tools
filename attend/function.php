@@ -63,7 +63,6 @@ $img=array("https://everydaypower.com/wp-content/uploads/2021/12/Best-Motivation
 "https://i.etsystatic.com/24456611/r/il/4830da/3474351438/il_fullxfull.3474351438_5yt8.jpg",
 "https://www.niagarainstitute.com/hs-fs/hubfs/Quality%20means%20doing%20it%20right%20when%20no%20one%20is%20looking%20-%20Henry%20Ford%20Inspirational%20Quote%20for%20Employees.png?width=740&name=Quality%20means%20doing%20it%20right%20when%20no%20one%20is%20looking%20-%20Henry%20Ford%20Inspirational%20Quote%20for%20Employees.png",
 "https://thumbs.dreamstime.com/b/motivational-inspirational-quotes-office-home-as-gift-222772745.jpg",
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0IeGOgDjrsyJO0VeArP_-5Z4imnR53ih9BjaPFLTp5qS1TbCThpZNT5NS76zf2E9T8S4&usqp=CAU",
 "https://rukminim1.flixcart.com/image/416/416/jgpfs7k0/poster/s/f/p/medium-gsp-021-all-i-ask-is-that-today-you-do-the-best-work-of-original-imaf4vqtnefqc3gy.jpeg?q=70"
 );
 
