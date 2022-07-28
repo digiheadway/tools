@@ -50,7 +50,7 @@ foreach ($user['hours_spent'] as $row) {
             <p><?php echo $user['name'] ?></p>
         </header>
         <main>
-        <img src="<? php echo $img[array_rand($img)]; ?>" class="center">
+        <img src="<?php echo $img[array_rand($img)]; ?>" class="center">
             <section class="first_section">
                 <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
