@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "tools.digiheadway",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "tools.digiheadway",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}
