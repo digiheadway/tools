@@ -1,18 +1,9 @@
-// This is the service worker with the Cache-first network
+/** An empty service worker! */
 
-const CACHE = "pwabuilder-precache";
+self.addEventListener (‘fetch’, function(event)
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+{
 
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
+/** An empty fetch handler! */
+
 });
-
-workbox.routing.registerRoute(
-  new RegExp('/*'),
-  new workbox.strategies.CacheFirst({
-    cacheName: CACHE
-  })
-);
