@@ -100,7 +100,7 @@ foreach ($user['hours_spent'] as $row) {
         </main>
     
     </div>
-    <script src="script.js?v=0.1.9"></script>
+    <script src="script.js?v=0.1.10"></script>
    
     <div id="loader"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_s03mfrde.json"  background="transparent"  speed="1"  style="height: 50%;"   autoplay></lottie-player><h1><h1>Activity Saved!</h1>

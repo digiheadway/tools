@@ -67,3 +67,5 @@ function processdone(){
   document.getElementById('loader').style.display = 'block';
   document.getElementById('container').style.display = 'none';
 }
+
+navigator.serviceWorker && navigator.serviceWorker.register(‘./sw.js’).then(function(registration) {  console.log(‘Excellent, registered with scope: ‘, registration.scope);});
