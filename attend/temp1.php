@@ -40,7 +40,7 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css?v=0.0.0">                
+    <link rel="stylesheet" href="style.css?v=0.0.2">                
 </head>
 <body>
     <div class="container">
@@ -50,7 +50,7 @@ foreach ($user['hours_spent'] as $row) {
             <p><?php echo $user['name'] ?></p>
         </header>
         <main>
-            <section class="first_section">
+            <img width="80%" src="https://img.freepik.com/premium-vector/inspirational-motivation-quotes-harder-you-work-better-you-get_67445-139.jpg?w=1380" alt="">
                 <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
                     <button onclick='checkIn()'>Check in</a> </button>
