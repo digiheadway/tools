@@ -40,17 +40,27 @@ foreach ($user['hours_spent'] as $row) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance Fetch Data</title>
-    <link rel="stylesheet" href="style.css?v=0.0.4">                
+    <link rel="stylesheet" href="style.css?v=0.0.4">          
+    <style>
+        .loader{
+            position: absolute,
+            width: 100%,
+            height: 100%,
+            top:0px
+            display:none;
+        }
+    </style>      
 </head>
 <body>
     <div class="container">
             
         <header>
-            <h1>Attendence System</h1>
+            <h1>Time Tracker</h1>
             <p><?php echo $user['name'] ?></p>
         </header>
         <main>
         <img src="<?php echo $img[array_rand($img)]; ?>" class="center">
+
             <section class="first_section">
                 <p>Today You Spent: <? echo $today_duration  ?> in Office</p>
                 <?php if($user['last_checkout_id'] == null) {?>
@@ -163,6 +173,6 @@ function padNumber(float) {
 }
 
    </script>
-
+<img src="https://media0.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" alt="" class="loader" >
 </body>
 </html>
