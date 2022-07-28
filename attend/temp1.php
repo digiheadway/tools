@@ -43,10 +43,10 @@ foreach ($user['hours_spent'] as $row) {
     <link rel="stylesheet" href="style.css?v=0.0.4">          
     <style>
         .loader{
-            position: absolute,
-            width: 100%,
-            height: 100%,
-            top:0px
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0px;
             display:none;
         }
     </style>      
