@@ -4,10 +4,10 @@ date_default_timezone_set("Asia/Calcutta");
 
 function notify($username, $action)
 {
-    $message = urlencode("$username $action!");
+    $message = urlencode("$username $action! at $time");
     $phone = "9068062563,9050995106";
     $url = "https://wa.digiheadway.com/?pn=$phone&msg=$message";
-    $url = "https://webhook.site/7ab9bc24-8165-4f85-b7ce-54cb4e073f7b";
+  //  $url = "https://webhook.site/7ab9bc24-8165-4f85-b7ce-54cb4e073f7b";
 
     file_get_contents($url);
 }
