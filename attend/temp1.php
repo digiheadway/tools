@@ -179,7 +179,7 @@ function padNumber(float) {
 }
 
    </script>
-   <img src="loading.png" width="100%" alt="">
+   <img src="loading.png" width="100%" alt="" id="loader">
 
 </body>
 </html>
