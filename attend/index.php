@@ -48,7 +48,7 @@ foreach ($user['hours_spent'] as $row) {
     <div class="container" id="container">
             
         <header>
-            <h1>Attendence System</h1>
+            <h1>Time Tracker</h1>
             <p><?php echo $user['name'] ?></p>
         </header>
         <main>
