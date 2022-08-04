@@ -5,7 +5,8 @@ $password = "#DNhomg$:p7L";
 $database = "staff_panel";
 $filepath = "backup.sql";
 
-exec("mysqldump --user=$user --password=$password --host=$host  $database  < $targetFifilepathlePath");
+// exec("mysqldump --user=$user --password=$password --host=$host  $database  < $targetFifilepathlePath");
+exec("mysql -u $user -p $password $database < $filepath");
 
 // mysql -u [user] -p [database_name] < [filename].sql
 ?> 
