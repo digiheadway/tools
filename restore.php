@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "u240376517_tools";
 $password = "#DNhomg$:p7L";
-$database = "staff_panel";
+$database = "u240376517_tools";
 $filepath = "backup.sql";
 
 // exec("mysqldump --user=$user --password=$password --host=$host  $database  < $targetFifilepathlePath");
