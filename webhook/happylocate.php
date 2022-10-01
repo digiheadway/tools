@@ -4,7 +4,7 @@
 $json = file_get_contents('php://input');
 
 if (!$json) {
-  echo "No Data"
+  echo "No Data";
   die();
 }
 // Decode JSON data to PHP associative array
