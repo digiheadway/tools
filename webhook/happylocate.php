@@ -1,7 +1,11 @@
 <?php
+
 // Get data from webhook
 $json = file_get_contents('php://input');
 
+if (!$json) {
+  die();
+}
 // Decode JSON data to PHP associative array
 $arr = json_decode($json, true);
 
