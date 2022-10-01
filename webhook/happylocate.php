@@ -31,8 +31,8 @@ $postData = [
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-//  CURLOPT_URL => 'https://staging.happylocate.org/api/v1/user/lead',
-  CURLOPT_URL => 'https://webhook.site/ffcbfda0-ede3-4548-b815-e6be05b11317',
+  CURLOPT_URL => 'https://dashboard.happylocate.com/api/v1/user/lead',
+ // CURLOPT_URL => 'https://webhook.site/ffcbfda0-ede3-4548-b815-e6be05b11317',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
