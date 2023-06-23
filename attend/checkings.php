@@ -17,7 +17,7 @@ function notify($username, $action, $time)
     $message = "$username $action at $time";
 
     // Slack Incoming Webhook URL
-    $webhookUrl = "https://hooks.slack.com/services/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";
+    $webhookUrl = "https://hooks.slack.com/services/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";
 
     $payload = json_encode(array('text' => $message));
 
