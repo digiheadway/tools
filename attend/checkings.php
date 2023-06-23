@@ -2,7 +2,7 @@
 
 date_default_timezone_set("Asia/Calcutta");
 
-function notify($username, $action, $time)
+/* function notify($username, $action, $time)
 {
     $message = urlencode("$username $action at $time");
     $phone = "9068062563,9050995106,7404169591";
@@ -10,6 +10,27 @@ function notify($username, $action, $time)
   //  $url = "https://webhook.site/7ab9bc24-8165-4f85-b7ce-54cb4e073f7b";
 
     file_get_contents($url);
+}
+*/
+function notify($username, $action, $time)
+{
+    $message = "$username $action at $time";
+
+    // Slack Incoming Webhook URL
+    $webhookUrl = "https://hooks.slack.com/services/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";
+
+    $payload = json_encode(array('text' => $message));
+
+    $options = array(
+        'http' => array(
+            'header'  => "Content-type: application/json",
+            'method'  => 'POST',
+            'content' => $payload
+        )
+    );
+
+    $context  = stream_context_create($options);
+    $result = file_get_contents($webhookUrl, false, $context);
 }
 
 $user_name = $_COOKIE['user'];
